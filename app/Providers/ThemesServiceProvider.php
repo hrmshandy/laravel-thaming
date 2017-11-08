@@ -16,7 +16,8 @@ class ThemesServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        $path = $this->app['config']['theme.path'].'/'.$this->app['config']['theme.active'];
+        $this->loadViewsFrom($path, 'theme');
     }
 
     /**
@@ -26,7 +27,6 @@ class ThemesServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $path = $this->app['config']['theme.path'].'/'.$this->app['config']['theme.active'];
-        $this->loadViewsFrom($path, 'theme');
+        //
     }
 }
